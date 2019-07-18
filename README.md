@@ -62,7 +62,8 @@ Third party libraries required for building project other than angular core-pack
 2. `Lodash` - To manage and to perform, performance centric data structure operation.
 
 ## Upcoming features in the next phases of application
-We know, no application is perfect, there is always a room for perfection. Still the important features are yet to come and is under development.
+We know, no application is perfect, there is always a room for perfection. Still the important
+ features are yet to come and is under development.
 1. Pie chart for Expense vs Budget Chart, Pie and Bar charts for Categorical splitting of Expenses.
 2. Create and manage your Income.
 3. New category i,e Saving will be introduced and will assist you regarding the saving based on your past expenses.
