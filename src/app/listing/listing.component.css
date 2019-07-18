@@ -1,0 +1,39 @@
+.graph-content {
+  width: 50px;
+  height: 150px;
+  border: 1px solid grey;
+  margin: 5px;
+}
+.graph-panel {
+  width: 100%;
+  /* border: 1px solid blue; */
+  margin: 10px;
+}
+.listing-panel {
+  width: 100%;
+  border: 1px solid green;
+  margin: 10px 20px 10px 10px !important;
+}
+.listing-header {
+  padding: 20px;
+}
+.listing-content {
+  width : 100%;
+}
+.form-content span {
+  font-size: 12px;
+  padding: 10px;
+}
+.categorybutton {
+  font-size: 10px;
+  /* background-color: ; */
+  color: black;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.amountinput {
+  width: 60px ;
+}
+/* .table-body > tr > td{
+  border: none !important;
+} */

@@ -1,0 +1,115 @@
+<div class="">
+  <div class="">
+    <div class="row justify-content-around graph-panel">
+    <div class="col-3 graph-content">
+      <div >
+        <p>
+          Total Budget: {{totalBudget}}
+        </p>
+        <p>
+          Total Expenses: {{totalExpensesAmount}}
+        </p>
+        <p>
+          Remaining Amount: {{totalBudget - totalExpensesAmount}}
+        </p>
+</div>
+    </div>
+    <div class="col-3 graph-content">
+      Pie Chart
+    </div>
+    <div class="col-3 graph-content">
+      Expenses Graph
+    </div>
+
+    </div>
+
+  </div>
+  <div class="listing-panel">
+    <div class="listing-header">
+      <div class="row listing-button">
+        <button type="button" class="btn btn-success btn-sm" (click)="getForm()" [disabled]="isSaveExpenses">Add Expenses</button>
+        <form class="form-content" [formGroup] ="formData" *ngIf="isSaveExpenses">
+          <span>
+            <label for="">Amount*</label>
+            <input type="number" class="amountinput" formControlName="amount"  >
+          </span>
+          <span>
+            <label for="">Category*</label>
+            <button type="button" class="btn btn-success btn-sm categorybutton" (click)="chooseCategory = true; createCategory=false">Choose</button>
+            or
+            <button type="button" class="btn btn-success btn-sm categorybutton" (click)="createCategory = true; chooseCategory = false;">Create</button>
+            <span *ngIf="chooseCategory">
+              <select  formControlName="category"  >
+                <option [value]="item" *ngFor="let item of allCategories">
+                  {{item}}
+                </option>
+              </select>
+            </span>
+
+            <input class="" formControlName="category" placeholder="Create Category" type="text"*ngIf="createCategory" >
+
+          </span>
+          <span>
+            <label for="">Item*</label>
+            <input type="text" formControlName="item" >
+          </span>
+          <span>
+            <button type="button" class="btn btn-success btn-sm" (click)="saveFormData()">Save</button>
+          </span>
+          <span>
+            <button type="button" class="btn btn-danger btn-sm" (click)="CancelForm()">Cancel</button>
+          </span>
+        </form>
+      </div>
+
+    </div>
+    <div class="listing-content">
+      <table class="table table-bordered" *ngIf="totalExpenses.length">
+  <thead>
+    <tr>
+      <th scope="col">Amount</th>
+      <th scope="col">Category</th>
+      <th scope="col">Item</th>
+      <th scope="col">Time</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-body" *ngFor="let data of totalExpenses; index as i">
+    <tr>
+      <th scope="row">{{data.amount}}</th>
+      <td>{{data.category}}</td>
+      <td>{{data.item}}</td>
+      <td>{{data.createdDate}}</td>
+      <td>
+        <span>
+        <button type="button" *ngIf="!data.isDeleted" class="btn btn-danger btn-sm" (click)="deleteItem(i)">Remove</button>
+        <button type="button" *ngIf="data.isDeleted" class="btn btn-success btn-sm" (click)="deleteItem(i)">Undo</button>
+      </span>
+    </td>
+    </tr>
+  </tbody>
+</table>
+<!-- <div class="pagination">
+  <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div> -->
+    </div>
+  </div>
+</div>
