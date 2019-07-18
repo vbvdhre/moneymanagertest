@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'mm';
   collapsed = true;
+  // this function is used to Toggle navbar on mobile application
      toggleCollapsed(): void {
        this.collapsed = !this.collapsed;
      }

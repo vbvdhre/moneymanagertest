@@ -3,21 +3,19 @@
     <div class="row cat-div">
       <label for="">Edit Budget</label>&nbsp;
       <input type="number" name="" [(ngModel)]="totalBudget" [disabled]="!showBudget">&nbsp;
-      <button type="button" name="button" (click)="showBudget = !showBudget" *ngIf="!showBudget" >Edit</button>
-      <button type="button" name="button" (click)="saveBudget()" *ngIf="showBudget">Save</button>
-
+      <button type="button" class="btn btn-success btn-sm" name="button" (click)="showBudget = !showBudget" *ngIf="!showBudget" >Edit</button>
+      <button type="button" class="btn btn-success btn-sm" name="button" (click)="saveBudget()" *ngIf="showBudget">Save</button>
   </div>
   <div class="row cat-div">
     <label for="">Add Category</label>&nbsp;
     <input type="text" name="category" [(ngModel)]="category">&nbsp;
-    <button type="button" name="button" (click)="saveCategory()">Save</button>
+    <button type="button"  class="btn btn-success btn-sm" name="button" (click)="saveCategory()">Save</button>
   </div>
-  <div class="">
+  <div class="cat-div">
     <strong>
       All Categories
     </strong>
     <div class="" *ngFor="let item of allCategories">
-
       <li>
         {{item}}
       </li>

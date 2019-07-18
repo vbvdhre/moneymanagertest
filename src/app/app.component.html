@@ -1,8 +1,8 @@
-
-    <div class="panel">
+<div class="panel">
+      <div class="panel-nav">
       <div class="">
         <nav class="navbar navbar-expand-lg navbar-light navbar-background">
-            <a class="navbar-brand" [routerLink]="['']">MoneyManager</a>
+            <a class="navbar-brand homeIcon" [routerLink]="['']">MoneyManager</a>
             <button class="navbar-toggler collapsed" (click)="toggleCollapsed()" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
              aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon">
@@ -22,5 +22,6 @@
       </div>
       <div class="">
         <router-outlet></router-outlet>
+      </div>
       </div>
     </div>

@@ -1,28 +1,28 @@
 .graph-content {
   width: 50px;
-  height: 150px;
-  border: 1px solid grey;
+  height: 200px;
+  border: 1px solid #016e4b;
   margin: 5px;
 }
 .graph-panel {
   width: 100%;
-  /* border: 1px solid blue; */
   margin: 10px;
 }
 .listing-panel {
-  width: 100%;
-  border: 1px solid green;
-  margin: 10px 20px 10px 10px !important;
+  width: auto;
+  border: 1px solid grey;
+  margin: 10px 10px 10px 10px !important;
 }
 .listing-header {
   padding: 20px;
 }
 .listing-content {
   width : 100%;
+  padding: 10px;
 }
 .form-content span {
   font-size: 12px;
-  padding: 10px;
+
 }
 .categorybutton {
   font-size: 10px;
@@ -34,6 +34,24 @@
 .amountinput {
   width: 60px ;
 }
-/* .table-body > tr > td{
-  border: none !important;
-} */
+.graph-Header {
+  height: 50px;
+  background-color: #016e4b;
+  color: white;
+  text-align: center;
+  padding-top: 10px;
+  border: 1px solid #016e4b;
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+}
+.graph-details {
+  text-align: center;
+  margin-top: 10px;
+
+}
+.formField {
+margin-left: 10px;
+}
+.deleted{
+  background-color: #ffdede;
+}

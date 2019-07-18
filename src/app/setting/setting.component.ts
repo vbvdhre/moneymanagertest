@@ -15,17 +15,19 @@ allCategories = [];
   constructor() { }
 
   ngOnInit() {
+    // get all the categories from the localstorage
     let categories = localStorage.getItem('categories');
     if(categories !== null) {
       this.allCategories = this.allCategories.concat(JSON.parse(localStorage.getItem('categories')));
     }
 
   }
+  // save or edit the Total Budget
   saveBudget() {
-    console.log('this.totalBudget', this.totalBudget)
     localStorage.setItem('totalBudget', JSON.stringify(this.totalBudget));
     this.showBudget = false;
   }
+  // Save the entered category and store it in the localstorage
   saveCategory() {
     this.allCategories.push(this.category);
     this.allCategories = _.uniq(this.allCategories);

@@ -4,6 +4,9 @@
 .navbar-background {
   background-color: #28a745;
 }
-.item  a{
+.homeIcon, .item  a{
   color : white;
+}
+.panel-nav {
+  border: 1px solid #28a745
 }

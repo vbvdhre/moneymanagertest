@@ -2,23 +2,49 @@
   <div class="">
     <div class="row justify-content-around graph-panel">
     <div class="col-3 graph-content">
-      <div >
-        <p>
-          Total Budget: {{totalBudget}}
-        </p>
-        <p>
-          Total Expenses: {{totalExpensesAmount}}
-        </p>
-        <p>
-          Remaining Amount: {{totalBudget - totalExpensesAmount}}
-        </p>
-</div>
+      <div class="graph-Header">
+        Expense Calculator
+      </div>
+      <div class="graph-details">
+        <div >
+          <p>
+            Total Budget: {{totalBudget}}
+          </p>
+          <p>
+            Total Expenses: {{totalExpensesAmount}}
+          </p>
+          <p>
+            Remaining Amount: {{totalBudget - totalExpensesAmount}}
+          </p>
+  </div>
+      </div>
+
     </div>
     <div class="col-3 graph-content">
-      Pie Chart
+
+      <div class="graph-Header">
+        Pie Chart
+      </div>
+      <div class="graph-details">
+        <div >
+          <p>
+            **Nothing to display**
+          </p>
+  </div>
+      </div>
     </div>
     <div class="col-3 graph-content">
-      Expenses Graph
+
+      <div class="graph-Header">
+        Expenses Graph
+      </div>
+      <div class="graph-details">
+        <div >
+          <p>
+            **Nothing to display**
+          </p>
+  </div>
+      </div>
     </div>
 
     </div>
@@ -27,18 +53,18 @@
   <div class="listing-panel">
     <div class="listing-header">
       <div class="row listing-button">
-        <button type="button" class="btn btn-success btn-sm" (click)="getForm()" [disabled]="isSaveExpenses">Add Expenses</button>
-        <form class="form-content" [formGroup] ="formData" *ngIf="isSaveExpenses">
-          <span>
-            <label for="">Amount*</label>
-            <input type="number" class="amountinput" formControlName="amount"  >
+        <button type="button" class="btn btn-success btn-sm" (click)="getForm()" [disabled]="isSaveExpenses">Add Expense</button>&nbsp;&nbsp;
+        <form class="form-content formField" [formGroup] ="formData" *ngIf="isSaveExpenses">
+          <span class="formField">
+            <label for="">Amount*</label>&nbsp;
+            <input type="number" class="amountinput" formControlName="amount"  >&nbsp;&nbsp;
           </span>
-          <span>
+          <span class="formField">
             <label for="">Category*</label>
             <button type="button" class="btn btn-success btn-sm categorybutton" (click)="chooseCategory = true; createCategory=false">Choose</button>
             or
             <button type="button" class="btn btn-success btn-sm categorybutton" (click)="createCategory = true; chooseCategory = false;">Create</button>
-            <span *ngIf="chooseCategory">
+            <span *ngIf="chooseCategory" class="formField">
               <select  formControlName="category"  >
                 <option [value]="item" *ngFor="let item of allCategories">
                   {{item}}
@@ -46,17 +72,17 @@
               </select>
             </span>
 
-            <input class="" formControlName="category" placeholder="Create Category" type="text"*ngIf="createCategory" >
+            <input class=""  class="formField" formControlName="category" placeholder="Create Category" type="text"*ngIf="createCategory" >
 
           </span>
-          <span>
-            <label for="">Item*</label>
+          <span class="formField">
+            <label for="" class="formField">Item*</label>&nbsp;
             <input type="text" formControlName="item" >
           </span>
-          <span>
+          <span class="formField">
             <button type="button" class="btn btn-success btn-sm" (click)="saveFormData()">Save</button>
           </span>
-          <span>
+          <span class="formField">
             <button type="button" class="btn btn-danger btn-sm" (click)="CancelForm()">Cancel</button>
           </span>
         </form>
@@ -75,7 +101,7 @@
     </tr>
   </thead>
   <tbody class="table-body" *ngFor="let data of totalExpenses; index as i">
-    <tr>
+    <tr [ngClass]="data.isDeleted ? 'deleted' : 'notDeleted'">
       <th scope="row">{{data.amount}}</th>
       <td>{{data.category}}</td>
       <td>{{data.item}}</td>
@@ -89,27 +115,6 @@
     </tr>
   </tbody>
 </table>
-<!-- <div class="pagination">
-  <nav aria-label="Page navigation example">
-  <ul class="pagination">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-    <li class="page-item"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</div> -->
     </div>
   </div>
 </div>

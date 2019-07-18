@@ -25,7 +25,6 @@
     "chart.js": "^2.8.0",
     "core-js": "^2.5.4",
     "lodash": "^4.17.14",
-    "moment": "^2.24.0",
     "ng2-charts": "^2.2.0",
     "rxjs": "^6.5.2",
     "rxjs-compat": "^6.5.2",
